@@ -6,7 +6,7 @@
     </thead>
     <tbody>
     <?php
-        foreach($todos as $todo){
+        foreach($model as $todo){
             echo "<tr>";
             echo "<td>$todo->id</td><td>$todo->name</td><td>$todo->done</td>";
             echo "<td><a href='index.php?controller=Todo&action=Detail&id=" . $todo->id . "'>details</a></td>";

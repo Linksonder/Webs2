@@ -6,6 +6,7 @@
  * Time: 12:23
  */
 require('database.php');
+require('controller/Controller.php');
 require('controller/todoController.php');
 require('model/todo.php');
 

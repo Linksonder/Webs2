@@ -5,28 +5,30 @@
  * Date: 4-3-2015
  * Time: 12:27
  */
-class TodoController{
+class TodoController extends Controller{
 
     public function Index()
     {
         $todos = Todo::GetAll();
 
-        require('view/todo/index.php');
+        parent::show('todo/index', $todos);
     }
 
     public function Detail($id)
     {
         $todo = new Todo($id);
 
-        require('view/todo/detail.php');
+        parent::show('todo/detail', $todo);
     }
 
     public function Update($id){
-        echo "update mijn todotje met id $id" ;
+
+        $this->Detail($id);
     }
 
     public function Delete($id){
-        echo "delete mijn todjte met id $id";
+
+       $this->Index();
     }
 }
 
